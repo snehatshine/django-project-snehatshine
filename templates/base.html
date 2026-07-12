@@ -1,29 +1,26 @@
 {% load static %}
- <html>
-    <head>
-        <title>RentEase</title>
-
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-
-    <header>
-        <h1>RentEase</h1>
-
-        <nav>
-            <a href="/home/" class="{% if request.path == '/home/' %} activate {% endif %}">Home</a>
-            <a href="/about/" class="{% if request.path == '/about/' %} activate {% endif %}">About</a>
-            <a href="/contact/" class="{% if request.path == '/contact/' %} activate {% endif %}">Contact</a>
-        </nav>
-    </header>
-    <main>
+<html>
+<head>
+    <title>RentEase</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <h1>RentEase - Online House Rental Management</h1>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </nav>
+</header>
+<main>
     {% block content %}
     {% endblock %}
-    </main>
-    <footer>
-        <p>
-            © 2026 RentEase
-        </p>
-    </footer>
-    </body>
- </html>
+</main>
+<footer>
+    <h6>© 2026 RentEase | Online House Rental Management Platform</h6>
+</footer>
+</body>
+</html>
